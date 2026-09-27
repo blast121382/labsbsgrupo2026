@@ -70,14 +70,3 @@ El modelo alucinó la fecha desplazándola en un día (`2026-09-14`) y redujo ar
    - Parsear los argumentos generados por el LLM mediante una clase `ArgumentosComparar(BaseModel)` con validaciones de rango.
 3. **Mecanismo de Corrección por Reintento (Self-Correction Loop):**
    - Si los parámetros extraídos discrepan de la solicitud estructurada que ya posee el backend, el servicio no debe ejecutar la herramienta errónea ni inventar datos; debe rechazar la llamada o reintentar inyectando el error como mensaje de sistema.
-
----
-
-## 4. Alineación con los 5 Casos del Proyecto Final (CriptoAdvisor)
-
-El mismo estándar de `casos.jsonl` y `evaluacion.py` aprendido en este laboratorio se aplicó para validar los 5 casos de prueba del proyecto personal CriptoAdvisor:
-- `caso_01_solicitud_valida`: Consulta normal con Tool Call y métrica 1.00.
-- `caso_02_solicitud_incompleta`: Petición de aclaración sin invocar herramientas (Tool Call vacío esperado y obtenido).
-- `caso_03_fuera_de_dominio`: Rechazo educado de temas no cripto sin invocar herramientas.
-- `caso_04_invalidos`: Rechazo HTTP 422 por validación estricta de Pydantic.
-- `caso_05_fallo_proveedor`: Manejo de resiliencia HTTP 502/503 cuando el upstream falla.
