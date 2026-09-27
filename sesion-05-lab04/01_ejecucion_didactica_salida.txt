@@ -1,0 +1,26 @@
+$ python evaluacion/evaluacion.py --archivo evaluacion/casos-ejemplo.jsonl
+
+Caso: ejemplo-aprobado
+Herramientas: 1.00 (APROBÓ)
+Razón: [
+	 Tool Calling Reason: Exact match: expected ['comparar_opciones'], called ['comparar_opciones']. See details above.
+	 Tool Selection Reason: No available tools were provided to assess tool selection criteria
+]
+
+
+Caso: ejemplo-argumentos-incorrectos
+Herramientas: 0.00 (NO APROBÓ)
+Razón: [
+	 Tool Calling Reason: Not an exact match: expected ['comparar_opciones'], called ['comparar_opciones']. See details above.
+]
+
+
+Caso: ejemplo-aclaracion-sin-herramienta
+Herramientas: 1.00 (APROBÓ)
+Razón: [
+	 Tool Calling Reason: Exact match: expected [], called []. See details above.
+	 Tool Selection Reason: No available tools were provided to assess tool selection criteria
+]
+
+
+Resultado: NO APROBÓ
