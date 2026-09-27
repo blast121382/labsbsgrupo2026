@@ -1,0 +1,83 @@
+{
+  "trace_id": "tr-7f8a910b-4e2c-4911-9a72-4b210389de14",
+  "name": "Planificar actividad",
+  "timestamp": "2026-09-27T23:35:18.102Z",
+  "status": "COMPLETED",
+  "input": {
+    "solicitud": {
+      "pregunta": "Compara estas ubicaciones para una feria de cuatro horas.",
+      "ubicaciones": [
+        {"nombre": "Cusco", "latitud": -13.532, "longitud": -71.967},
+        {"nombre": "Arequipa", "latitud": -16.409, "longitud": -71.537}
+      ],
+      "fecha": "2026-09-28",
+      "duracion_horas": 4
+    }
+  },
+  "spans": [
+    {
+      "id": "span-api-orchestrator",
+      "name": "FastAPI: /planificar",
+      "parent_id": null,
+      "type": "span",
+      "duration_ms": 3210,
+      "metadata": {
+        "status_code": 200,
+        "endpoint": "/planificar"
+      }
+    },
+    {
+      "id": "span-llm-tool-call",
+      "name": "LLM: Generación de llamada a herramienta",
+      "parent_id": "span-api-orchestrator",
+      "type": "generation",
+      "duration_ms": 780,
+      "model": "qwen/qwen3.8-27b",
+      "prompt_tokens": 315,
+      "completion_tokens": 42,
+      "output": {
+        "tool_call": "comparar_opciones",
+        "arguments": {"fecha": "2026-09-28", "duracion_horas": 4}
+      }
+    },
+    {
+      "id": "span-tool-comparar",
+      "name": "Herramienta: comparar_opciones",
+      "parent_id": "span-api-orchestrator",
+      "type": "span",
+      "duration_ms": 840,
+      "input": {"fecha": "2026-09-28", "duracion_horas": 4},
+      "spans": [
+        {
+          "id": "span-meteo-cusco",
+          "name": "Open-Meteo: pronostico (Cusco)",
+          "type": "span",
+          "duration_ms": 410,
+          "endpoint": "https://api.open-meteo.com/v1/forecast",
+          "params": {"latitude": -13.532, "longitude": -71.967}
+        },
+        {
+          "id": "span-meteo-arequipa",
+          "name": "Open-Meteo: pronostico (Arequipa)",
+          "type": "span",
+          "duration_ms": 395,
+          "endpoint": "https://api.open-meteo.com/v1/forecast",
+          "params": {"latitude": -16.409, "longitude": -71.537}
+        }
+      ]
+    },
+    {
+      "id": "span-llm-explanation",
+      "name": "LLM: Explicación grounded final",
+      "parent_id": "span-api-orchestrator",
+      "type": "generation",
+      "duration_ms": 1450,
+      "model": "qwen/qwen3.8-27b",
+      "prompt_tokens": 1280,
+      "completion_tokens": 148,
+      "output": {
+        "text": "Para el 28 de septiembre de 2026, ambas ciudades ofrecen horarios adecuados..."
+      }
+    }
+  ]
+}
