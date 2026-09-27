@@ -1,0 +1,26 @@
+{
+  "metadatos": {
+    "laboratorio": "LAB-01 · Contratos básicos",
+    "sesion": 2,
+    "fecha_ejecucion_utc": "2026-09-27T23:18:27Z",
+    "endpoint": "POST http://127.0.0.1:8000/comparar",
+    "estado_http": 422
+  },
+  "solicitud_enviada": {
+    "cabeceras": {
+      "Content-Type": "application/json",
+      "X-API-Key": "cambia-esta-clave-local"
+    },
+    "cuerpo": {
+      "pregunta": "hola"
+    },
+    "comentario": "Faltan los campos requeridos: ubicaciones, fecha y duracion_horas"
+  },
+  "respuesta_obtenida": {
+    "status_code": 422,
+    "body": {
+      "detail": "Faltan: ubicaciones con coordenadas, fecha, duración en horas"
+    }
+  },
+  "conclusion": "Pydantic y la función de validación previa bloquearon la petición por datos faltantes sin realizar llamadas innecesarias al proveedor externo."
+}

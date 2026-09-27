@@ -1,0 +1,22 @@
+{
+  "metadatos": {
+    "laboratorio": "LAB-01 · Contratos básicos",
+    "sesion": 2,
+    "fecha_ejecucion_utc": "2026-09-27T23:18:13Z",
+    "endpoint": "POST http://127.0.0.1:8000/comparar",
+    "estado_http": 401
+  },
+  "solicitud_enviada": {
+    "cabeceras": {
+      "Content-Type": "application/json"
+    },
+    "comentario": "Petición enviada omitiendo la cabecera X-API-Key obligatoria"
+  },
+  "respuesta_obtenida": {
+    "status_code": 401,
+    "body": {
+      "detail": "Clave de acceso inválida."
+    }
+  },
+  "conclusion": "FastAPI rechazó la consulta inmediatamente en la capa de seguridad antes de consultar a Open-Meteo."
+}

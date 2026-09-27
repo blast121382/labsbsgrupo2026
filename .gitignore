@@ -1,0 +1,9 @@
+# Entorno y dependencias
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secretos
+.env
+.env.local
