@@ -1,0 +1,49 @@
+[
+  {
+    "ruta": "planificar",
+    "repeticion": 1,
+    "modo": "real",
+    "total_s": 3.0078347999369726,
+    "primer_texto_s": null,
+    "estado": "ok"
+  },
+  {
+    "ruta": "stream",
+    "repeticion": 1,
+    "modo": "real",
+    "total_s": 2.9502237000269815,
+    "primer_texto_s": 2.5951418000040576,
+    "estado": "ok"
+  },
+  {
+    "ruta": "planificar",
+    "repeticion": 2,
+    "modo": "real",
+    "total_s": 3.550916100037284,
+    "primer_texto_s": null,
+    "estado": "ok"
+  },
+  {
+    "ruta": "stream",
+    "repeticion": 2,
+    "modo": "real",
+    "total_s": 3.6454145999159664,
+    "primer_texto_s": 3.2344536999007687,
+    "estado": "ok"
+  },
+  {
+    "ruta": "planificar",
+    "repeticion": 3,
+    "modo": "real",
+    "total_s": 3.450831299996935,
+    "primer_texto_s": null,
+    "estado": "ok"
+  },
+  {
+    "ruta": "stream",
+    "repeticion": 3,
+    "modo": "real",
+    "estado": "fallo",
+    "error": "ValueError"
+  }
+]
