@@ -15,4 +15,4 @@
 | **3** | [sesion-03-lab02/](sesion-03-lab02/) | Rendimiento: respuesta completa y streaming SSE (`mediciones.json`) | ✅ Completo |
 | **4** | [sesion-04-lab03/](sesion-04-lab03/) | Integración observable con Langfuse (`trace_id` y spans) | ✅ Completo |
 | **5** | [sesion-05-lab04/](sesion-05-lab04/) | Evaluación con DeepEval (Tool Correctness y G-Eval) | ✅ Completo |
-| **6** | `sesion-06-lab05/` | Entrega reproducible, pytest limpio y Docker | ⏳ Pendiente |
+| **6** | [sesion-06-lab05/](sesion-06-lab05/) | Entrega reproducible, pytest limpio y Docker | ✅ Completo |
